@@ -1,5 +1,41 @@
 # opencart-array-helper
 
+Opencart Array Helper provides additional array functionality that you can use in your application.
+
+For more details and usage information on ArrayHelper, see the [guide article on array helpers](http://www.yiiframework.com/doc-2.0/guide-helper-array.html).
+###
+This module from Yii2 Framework is adapted by [Mefistophell Nill](https://github.com/Mefistophell) and [Zoturn](https://github.com/Zoturn) (**8sun Empire**) especially for OpenCart.
+
+Tested on Opencart 2.0. If you find an error, let us know.
+
+Version: 1.0
+
+See also: [Opencart Html Helper](https://github.com/8sun/opencart-html-helper)
+
+## Install
+1. You need copy the files to `/system/helper/` directory.
+
+2. Further add Helpers to `/system/startup.php` how is shown below:
+
+```
+require_once(DIR_SYSTEM . 'helper/ArrayHelper.php');
+require_once(DIR_SYSTEM . 'helper/InvalidParamException.php');
+```
+
+## Usage
+Just use Helpers into your template files. You may get something following:
+
+```
+$array = [
+    ['id' => '123', 'data' => 'abc'],
+    ['id' => '345', 'data' => 'def'],
+];
+$result = ArrayHelper::getColumn($array, 'id');
+// the result is: ['123', '345']
+```
+
+Here is the list of available features
+
 <table>
     <colgroup>
         <col class="col-method">
